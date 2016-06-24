@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F0E56711D1D8DC2003A316C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E56701D1D8DC2003A316C /* main.m */; };
+		3F0E56741D1D8DC2003A316C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E56731D1D8DC2003A316C /* AppDelegate.m */; };
+		3F0E56771D1D8DC2003A316C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E56761D1D8DC2003A316C /* ViewController.m */; };
+		3F0E567A1D1D8DC2003A316C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E56781D1D8DC2003A316C /* Main.storyboard */; };
+		3F0E567C1D1D8DC2003A316C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E567B1D1D8DC2003A316C /* Assets.xcassets */; };
+		3F0E567F1D1D8DC2003A316C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E567D1D1D8DC2003A316C /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3F0E566C1D1D8DC2003A316C /* Vkontakte_application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vkontakte_application.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F0E56701D1D8DC2003A316C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3F0E56721D1D8DC2003A316C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3F0E56731D1D8DC2003A316C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3F0E56751D1D8DC2003A316C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3F0E56761D1D8DC2003A316C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3F0E56791D1D8DC2003A316C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F0E567B1D1D8DC2003A316C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F0E567E1D1D8DC2003A316C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F0E56801D1D8DC2003A316C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F0E56691D1D8DC2003A316C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F0E56631D1D8DC2003A316C = {
+			isa = PBXGroup;
+			children = (
+				3F0E566E1D1D8DC2003A316C /* Vkontakte_application */,
+				3F0E566D1D1D8DC2003A316C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3F0E566D1D1D8DC2003A316C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F0E566C1D1D8DC2003A316C /* Vkontakte_application.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F0E566E1D1D8DC2003A316C /* Vkontakte_application */ = {
+			isa = PBXGroup;
+			children = (
+				3F0E56721D1D8DC2003A316C /* AppDelegate.h */,
+				3F0E56731D1D8DC2003A316C /* AppDelegate.m */,
+				3F0E56751D1D8DC2003A316C /* ViewController.h */,
+				3F0E56761D1D8DC2003A316C /* ViewController.m */,
+				3F0E56781D1D8DC2003A316C /* Main.storyboard */,
+				3F0E567B1D1D8DC2003A316C /* Assets.xcassets */,
+				3F0E567D1D1D8DC2003A316C /* LaunchScreen.storyboard */,
+				3F0E56801D1D8DC2003A316C /* Info.plist */,
+				3F0E566F1D1D8DC2003A316C /* Supporting Files */,
+			);
+			path = Vkontakte_application;
+			sourceTree = "<group>";
+		};
+		3F0E566F1D1D8DC2003A316C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F0E56701D1D8DC2003A316C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F0E566B1D1D8DC2003A316C /* Vkontakte_application */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F0E56831D1D8DC2003A316C /* Build configuration list for PBXNativeTarget "Vkontakte_application" */;
+			buildPhases = (
+				3F0E56681D1D8DC2003A316C /* Sources */,
+				3F0E56691D1D8DC2003A316C /* Frameworks */,
+				3F0E566A1D1D8DC2003A316C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vkontakte_application;
+			productName = Vkontakte_application;
+			productReference = 3F0E566C1D1D8DC2003A316C /* Vkontakte_application.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F0E56641D1D8DC2003A316C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Student;
+				TargetAttributes = {
+					3F0E566B1D1D8DC2003A316C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 3F0E56671D1D8DC2003A316C /* Build configuration list for PBXProject "Vkontakte_application" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F0E56631D1D8DC2003A316C;
+			productRefGroup = 3F0E566D1D1D8DC2003A316C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F0E566B1D1D8DC2003A316C /* Vkontakte_application */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F0E566A1D1D8DC2003A316C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F0E567F1D1D8DC2003A316C /* LaunchScreen.storyboard in Resources */,
+				3F0E567C1D1D8DC2003A316C /* Assets.xcassets in Resources */,
+				3F0E567A1D1D8DC2003A316C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F0E56681D1D8DC2003A316C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F0E56771D1D8DC2003A316C /* ViewController.m in Sources */,
+				3F0E56741D1D8DC2003A316C /* AppDelegate.m in Sources */,
+				3F0E56711D1D8DC2003A316C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3F0E56781D1D8DC2003A316C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F0E56791D1D8DC2003A316C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F0E567D1D1D8DC2003A316C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F0E567E1D1D8DC2003A316C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F0E56811D1D8DC2003A316C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3F0E56821D1D8DC2003A316C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F0E56841D1D8DC2003A316C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Vkontakte_application/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brainacademy.Vkontakte-application";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3F0E56851D1D8DC2003A316C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Vkontakte_application/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brainacademy.Vkontakte-application";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F0E56671D1D8DC2003A316C /* Build configuration list for PBXProject "Vkontakte_application" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F0E56811D1D8DC2003A316C /* Debug */,
+				3F0E56821D1D8DC2003A316C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F0E56831D1D8DC2003A316C /* Build configuration list for PBXNativeTarget "Vkontakte_application" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F0E56841D1D8DC2003A316C /* Debug */,
+				3F0E56851D1D8DC2003A316C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F0E56641D1D8DC2003A316C /* Project object */;
+}
