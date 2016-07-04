@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F046E7C1D2AC37D00B8D256 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F046E7B1D2AC37D00B8D256 /* DataManager.m */; };
 		3F0E56711D1D8DC2003A316C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E56701D1D8DC2003A316C /* main.m */; };
 		3F0E56741D1D8DC2003A316C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E56731D1D8DC2003A316C /* AppDelegate.m */; };
 		3F0E56771D1D8DC2003A316C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E56761D1D8DC2003A316C /* ViewController.m */; };
@@ -16,9 +17,13 @@
 		3F2820361D26D7CD0038000F /* background_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F2820351D26D7CD0038000F /* background_image.jpg */; };
 		3F2820381D26E5080038000F /* bigstock-Beautiful-Woman-Face-98982257.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F2820371D26E5080038000F /* bigstock-Beautiful-Woman-Face-98982257.jpg */; };
 		3F28203A1D26E5950038000F /* face_PNG5646.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F2820391D26E5950038000F /* face_PNG5646.png */; };
+		9EF614E9F75CD6AB735DF61C /* libPods-Vkontakte_application.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 132E67D3215BABBF1CA5B3C7 /* libPods-Vkontakte_application.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		132E67D3215BABBF1CA5B3C7 /* libPods-Vkontakte_application.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vkontakte_application.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F046E7A1D2AC37D00B8D256 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		3F046E7B1D2AC37D00B8D256 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		3F0E566C1D1D8DC2003A316C /* Vkontakte_application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vkontakte_application.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0E56701D1D8DC2003A316C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F0E56721D1D8DC2003A316C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,6 +38,8 @@
 		3F2820351D26D7CD0038000F /* background_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_image.jpg; sourceTree = "<group>"; };
 		3F2820371D26E5080038000F /* bigstock-Beautiful-Woman-Face-98982257.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bigstock-Beautiful-Woman-Face-98982257.jpg"; sourceTree = "<group>"; };
 		3F2820391D26E5950038000F /* face_PNG5646.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face_PNG5646.png; sourceTree = "<group>"; };
+		53E7E9796D07B85C7EBB44D8 /* Pods-Vkontakte_application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte_application.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vkontakte_application/Pods-Vkontakte_application.debug.xcconfig"; sourceTree = "<group>"; };
+		FD4DAE26AEACCBBF9F078084 /* Pods-Vkontakte_application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte_application.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vkontakte_application/Pods-Vkontakte_application.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EF614E9F75CD6AB735DF61C /* libPods-Vkontakte_application.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +59,8 @@
 			children = (
 				3F0E566E1D1D8DC2003A316C /* Vkontakte_application */,
 				3F0E566D1D1D8DC2003A316C /* Products */,
+				737958581E2C644F51BBBA8E /* Pods */,
+				888CF97478E520CD17E87B4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +80,8 @@
 				3F0E56731D1D8DC2003A316C /* AppDelegate.m */,
 				3F0E56751D1D8DC2003A316C /* ViewController.h */,
 				3F0E56761D1D8DC2003A316C /* ViewController.m */,
+				3F046E7A1D2AC37D00B8D256 /* DataManager.h */,
+				3F046E7B1D2AC37D00B8D256 /* DataManager.m */,
 				3F0E56891D1D9034003A316C /* SignUpViewController.h */,
 				3F0E568A1D1D9034003A316C /* SignUpViewController.m */,
 				3F0E567B1D1D8DC2003A316C /* Assets.xcassets */,
@@ -98,6 +110,23 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		737958581E2C644F51BBBA8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53E7E9796D07B85C7EBB44D8 /* Pods-Vkontakte_application.debug.xcconfig */,
+				FD4DAE26AEACCBBF9F078084 /* Pods-Vkontakte_application.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		888CF97478E520CD17E87B4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				132E67D3215BABBF1CA5B3C7 /* libPods-Vkontakte_application.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F0E56831D1D8DC2003A316C /* Build configuration list for PBXNativeTarget "Vkontakte_application" */;
 			buildPhases = (
+				7FB3C2B3A867406B840A522E /* [CP] Check Pods Manifest.lock */,
 				3F0E56681D1D8DC2003A316C /* Sources */,
 				3F0E56691D1D8DC2003A316C /* Frameworks */,
 				3F0E566A1D1D8DC2003A316C /* Resources */,
+				E0FCC1069CE3FDB5ABFD5951 /* [CP] Embed Pods Frameworks */,
+				13359CB1A78173834B28DDB0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -165,12 +197,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13359CB1A78173834B28DDB0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vkontakte_application/Pods-Vkontakte_application-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FB3C2B3A867406B840A522E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E0FCC1069CE3FDB5ABFD5951 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vkontakte_application/Pods-Vkontakte_application-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3F0E56681D1D8DC2003A316C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3F0E568B1D1D9034003A316C /* SignUpViewController.m in Sources */,
+				3F046E7C1D2AC37D00B8D256 /* DataManager.m in Sources */,
 				3F0E56771D1D8DC2003A316C /* ViewController.m in Sources */,
 				3F0E56741D1D8DC2003A316C /* AppDelegate.m in Sources */,
 				3F0E56711D1D8DC2003A316C /* main.m in Sources */,
@@ -275,22 +356,24 @@
 		};
 		3F0E56841D1D8DC2003A316C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53E7E9796D07B85C7EBB44D8 /* Pods-Vkontakte_application.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Vkontakte_application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.brainacademy.Vkontakte-application";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brn.vk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		3F0E56851D1D8DC2003A316C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD4DAE26AEACCBBF9F078084 /* Pods-Vkontakte_application.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Vkontakte_application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.brainacademy.Vkontakte-application";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brn.vk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
