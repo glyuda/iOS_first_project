@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F046E7C1D2AC37D00B8D256 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F046E7B1D2AC37D00B8D256 /* DataManager.m */; };
+		3F05DA7E1D30274F005C212C /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F05DA7D1D30274F005C212C /* FeedViewController.m */; };
 		3F0E56711D1D8DC2003A316C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E56701D1D8DC2003A316C /* main.m */; };
 		3F0E56741D1D8DC2003A316C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E56731D1D8DC2003A316C /* AppDelegate.m */; };
 		3F0E56771D1D8DC2003A316C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E56761D1D8DC2003A316C /* ViewController.m */; };
@@ -24,6 +25,8 @@
 		132E67D3215BABBF1CA5B3C7 /* libPods-Vkontakte_application.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vkontakte_application.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F046E7A1D2AC37D00B8D256 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		3F046E7B1D2AC37D00B8D256 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		3F05DA7C1D30274F005C212C /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		3F05DA7D1D30274F005C212C /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		3F0E566C1D1D8DC2003A316C /* Vkontakte_application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vkontakte_application.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0E56701D1D8DC2003A316C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F0E56721D1D8DC2003A316C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 				3F0E56731D1D8DC2003A316C /* AppDelegate.m */,
 				3F0E56751D1D8DC2003A316C /* ViewController.h */,
 				3F0E56761D1D8DC2003A316C /* ViewController.m */,
+				3F05DA7C1D30274F005C212C /* FeedViewController.h */,
+				3F05DA7D1D30274F005C212C /* FeedViewController.m */,
 				3F046E7A1D2AC37D00B8D256 /* DataManager.h */,
 				3F046E7B1D2AC37D00B8D256 /* DataManager.m */,
 				3F0E56891D1D9034003A316C /* SignUpViewController.h */,
@@ -254,6 +259,7 @@
 				3F046E7C1D2AC37D00B8D256 /* DataManager.m in Sources */,
 				3F0E56771D1D8DC2003A316C /* ViewController.m in Sources */,
 				3F0E56741D1D8DC2003A316C /* AppDelegate.m in Sources */,
+				3F05DA7E1D30274F005C212C /* FeedViewController.m in Sources */,
 				3F0E56711D1D8DC2003A316C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

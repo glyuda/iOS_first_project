@@ -12,4 +12,7 @@
 + (void)POSTRequestWithURL:(NSString *)url
                 parameters:(NSDictionary *)params
                    handler:(void (^)(NSData *, NSURLResponse *, NSError *))handler;
++ (void)GETRequestWithURL:(NSString *)url
+                parameters:(NSDictionary *)params
+                   handler:(void (^)(NSData *, NSURLResponse *, NSError *))handler;
 @end

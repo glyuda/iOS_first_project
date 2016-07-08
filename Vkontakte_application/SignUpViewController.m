@@ -8,16 +8,18 @@
 
 #import "DataManager.h"
 #import "SignUpViewController.h"
+#import "AppDelegate.h"
 
 @interface SignUpViewController ()
 
 @end
 
 @implementation SignUpViewController
-- (void)sign_in {
+- (void)signIn {
 // log in the system
+    UIApplication *application = [UIApplication sharedApplication];
+    [(AppDelegate *)application.delegate vkAuthorize];
 }
-
 - (void)submit {
 //operation with data which input user
     NSDictionary *dictionary = @{
@@ -38,7 +40,6 @@
                                 id o = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                                 
                             }];
-    
 }
 
 - (void)viewDidLoad {
@@ -63,7 +64,7 @@
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
 //add button "Sign In"
-    UIBarButtonItem *itemLeft = [[UIBarButtonItem alloc] initWithTitle:@"Sign In" style:UIBarButtonItemStyleDone target:self action:@selector(sign_in)];
+    UIBarButtonItem *itemLeft = [[UIBarButtonItem alloc] initWithTitle:@"Sign In" style:UIBarButtonItemStyleDone target:self action:@selector(signIn)];
     [self.navigationItem setLeftBarButtonItem:itemLeft];
     
 //add button "Create"
@@ -121,15 +122,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
