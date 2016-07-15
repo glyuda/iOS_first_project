@@ -8,6 +8,8 @@
 
 #import "DataManager.h"
 #import "FeedViewController.h"
+#import "NSManagerObjectContext.h"
+#import "User.h"
 
 
 @interface FeedViewController ()
@@ -19,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"authKey"];
-    [DataManager GETRequestWithURL:@"https://api.vk.com/method/wall.get"
+    [DataManager GETRequestWithURL:@"https://api.vk.com/method/newsfeed.get"
                         parameters:@{@"access_token" : token}
                            handler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                //1. Create a new class - FeedItem
@@ -27,11 +29,24 @@
                                NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                                
                                NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                               NSArray *feedItems = responseDict[@"response"][@"items"];
+                               NSArray *feedItems = responseDict[@"response"][@"profiles"];
+                               
                                for (NSDictionary *itemDictionary in feedItems) {
-                                   FeedItem *i = [[FeedItem alloc] init];
+                                   User *object =[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:[NSManagedObjectContext defaultContext]];
+                                   //get the data
+                                   object.id = itemDictionary[@"uid"];
+                                   object.first_name = itemDictionary[@"first_name"];
+                                   object.last_name = itemDictionary[@"last_name"];
                                    
                                }
+                               
+                               for (NSDictionary *attachmentDict in feedItems) {
+                               
+                               }
+                               
+                               //save changess
+                               [[NSManagedObjectContext defaultContext] save:nil];
+                               
                            }];
 }
 

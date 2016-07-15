@@ -18,6 +18,14 @@
 		3F2820361D26D7CD0038000F /* background_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F2820351D26D7CD0038000F /* background_image.jpg */; };
 		3F2820381D26E5080038000F /* bigstock-Beautiful-Woman-Face-98982257.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F2820371D26E5080038000F /* bigstock-Beautiful-Woman-Face-98982257.jpg */; };
 		3F28203A1D26E5950038000F /* face_PNG5646.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F2820391D26E5950038000F /* face_PNG5646.png */; };
+		3FB961A71D3943EE001C3DDF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FB961A51D3943EE001C3DDF /* Model.xcdatamodeld */; };
+		3FB961B51D3949C7001C3DDF /* Photo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB961AA1D3949C7001C3DDF /* Photo+CoreDataProperties.m */; };
+		3FB961B61D3949C7001C3DDF /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB961AC1D3949C7001C3DDF /* Photo.m */; };
+		3FB961B71D3949C7001C3DDF /* PhotoAlbum+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB961AE1D3949C7001C3DDF /* PhotoAlbum+CoreDataProperties.m */; };
+		3FB961B81D3949C7001C3DDF /* PhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB961B01D3949C7001C3DDF /* PhotoAlbum.m */; };
+		3FB961B91D3949C7001C3DDF /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB961B21D3949C7001C3DDF /* User+CoreDataProperties.m */; };
+		3FB961BA1D3949C7001C3DDF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB961B41D3949C7001C3DDF /* User.m */; };
+		3FB961BD1D3952D4001C3DDF /* NSManagerObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB961BC1D3952D4001C3DDF /* NSManagerObjectContext.m */; };
 		9EF614E9F75CD6AB735DF61C /* libPods-Vkontakte_application.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 132E67D3215BABBF1CA5B3C7 /* libPods-Vkontakte_application.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +49,21 @@
 		3F2820351D26D7CD0038000F /* background_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_image.jpg; sourceTree = "<group>"; };
 		3F2820371D26E5080038000F /* bigstock-Beautiful-Woman-Face-98982257.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bigstock-Beautiful-Woman-Face-98982257.jpg"; sourceTree = "<group>"; };
 		3F2820391D26E5950038000F /* face_PNG5646.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face_PNG5646.png; sourceTree = "<group>"; };
+		3FB961A61D3943EE001C3DDF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3FB961A91D3949C7001C3DDF /* Photo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3FB961AA1D3949C7001C3DDF /* Photo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3FB961AB1D3949C7001C3DDF /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		3FB961AC1D3949C7001C3DDF /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		3FB961AD1D3949C7001C3DDF /* PhotoAlbum+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PhotoAlbum+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3FB961AE1D3949C7001C3DDF /* PhotoAlbum+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PhotoAlbum+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3FB961AF1D3949C7001C3DDF /* PhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbum.h; sourceTree = "<group>"; };
+		3FB961B01D3949C7001C3DDF /* PhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbum.m; sourceTree = "<group>"; };
+		3FB961B11D3949C7001C3DDF /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3FB961B21D3949C7001C3DDF /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3FB961B31D3949C7001C3DDF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		3FB961B41D3949C7001C3DDF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		3FB961BB1D3952D4001C3DDF /* NSManagerObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSManagerObjectContext.h; sourceTree = "<group>"; };
+		3FB961BC1D3952D4001C3DDF /* NSManagerObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSManagerObjectContext.m; sourceTree = "<group>"; };
 		53E7E9796D07B85C7EBB44D8 /* Pods-Vkontakte_application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte_application.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vkontakte_application/Pods-Vkontakte_application.debug.xcconfig"; sourceTree = "<group>"; };
 		FD4DAE26AEACCBBF9F078084 /* Pods-Vkontakte_application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte_application.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vkontakte_application/Pods-Vkontakte_application.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +101,7 @@
 		3F0E566E1D1D8DC2003A316C /* Vkontakte_application */ = {
 			isa = PBXGroup;
 			children = (
+				3FB961A81D39498B001C3DDF /* Entities */,
 				3F2820341D26D6F30038000F /* images */,
 				3F0E56721D1D8DC2003A316C /* AppDelegate.h */,
 				3F0E56731D1D8DC2003A316C /* AppDelegate.m */,
@@ -93,6 +117,9 @@
 				3F0E567D1D1D8DC2003A316C /* LaunchScreen.storyboard */,
 				3F0E56801D1D8DC2003A316C /* Info.plist */,
 				3F0E566F1D1D8DC2003A316C /* Supporting Files */,
+				3FB961A51D3943EE001C3DDF /* Model.xcdatamodeld */,
+				3FB961BB1D3952D4001C3DDF /* NSManagerObjectContext.h */,
+				3FB961BC1D3952D4001C3DDF /* NSManagerObjectContext.m */,
 			);
 			path = Vkontakte_application;
 			sourceTree = "<group>";
@@ -113,6 +140,25 @@
 				3F2820371D26E5080038000F /* bigstock-Beautiful-Woman-Face-98982257.jpg */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		3FB961A81D39498B001C3DDF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3FB961A91D3949C7001C3DDF /* Photo+CoreDataProperties.h */,
+				3FB961AA1D3949C7001C3DDF /* Photo+CoreDataProperties.m */,
+				3FB961AB1D3949C7001C3DDF /* Photo.h */,
+				3FB961AC1D3949C7001C3DDF /* Photo.m */,
+				3FB961AD1D3949C7001C3DDF /* PhotoAlbum+CoreDataProperties.h */,
+				3FB961AE1D3949C7001C3DDF /* PhotoAlbum+CoreDataProperties.m */,
+				3FB961AF1D3949C7001C3DDF /* PhotoAlbum.h */,
+				3FB961B01D3949C7001C3DDF /* PhotoAlbum.m */,
+				3FB961B11D3949C7001C3DDF /* User+CoreDataProperties.h */,
+				3FB961B21D3949C7001C3DDF /* User+CoreDataProperties.m */,
+				3FB961B31D3949C7001C3DDF /* User.h */,
+				3FB961B41D3949C7001C3DDF /* User.m */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		737958581E2C644F51BBBA8E /* Pods */ = {
@@ -255,9 +301,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB961BA1D3949C7001C3DDF /* User.m in Sources */,
+				3FB961B81D3949C7001C3DDF /* PhotoAlbum.m in Sources */,
 				3F0E568B1D1D9034003A316C /* SignUpViewController.m in Sources */,
 				3F046E7C1D2AC37D00B8D256 /* DataManager.m in Sources */,
+				3FB961B51D3949C7001C3DDF /* Photo+CoreDataProperties.m in Sources */,
+				3FB961B61D3949C7001C3DDF /* Photo.m in Sources */,
 				3F0E56771D1D8DC2003A316C /* ViewController.m in Sources */,
+				3FB961B91D3949C7001C3DDF /* User+CoreDataProperties.m in Sources */,
+				3FB961A71D3943EE001C3DDF /* Model.xcdatamodeld in Sources */,
+				3FB961BD1D3952D4001C3DDF /* NSManagerObjectContext.m in Sources */,
+				3FB961B71D3949C7001C3DDF /* PhotoAlbum+CoreDataProperties.m in Sources */,
 				3F0E56741D1D8DC2003A316C /* AppDelegate.m in Sources */,
 				3F05DA7E1D30274F005C212C /* FeedViewController.m in Sources */,
 				3F0E56711D1D8DC2003A316C /* main.m in Sources */,
@@ -406,6 +460,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3FB961A51D3943EE001C3DDF /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3FB961A61D3943EE001C3DDF /* Model.xcdatamodel */,
+			);
+			currentVersion = 3FB961A61D3943EE001C3DDF /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3F0E56641D1D8DC2003A316C /* Project object */;
 }

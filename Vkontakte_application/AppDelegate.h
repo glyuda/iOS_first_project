@@ -12,10 +12,10 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong) NSManagedObjectContext *managedObjectContext;
 
 - (void)vkAuthorize;
-
+- (void)initializeCoreData;
 
 @end
 

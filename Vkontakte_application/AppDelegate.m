@@ -10,6 +10,10 @@
 #import "SignUpViewController.h"
 #import "FeedViewController.h"
 
+
+
+@import CoreData;
+
 @interface AppDelegate ()<VKSdkDelegate, VKSdkUIDelegate>
 
 @property (strong, nonatomic) VKSdk *sdkInstance;
@@ -22,7 +26,7 @@
 - (void)vkSdkAccessAuthorizationFinishedWithResult:(VKAuthorizationResult *)result {
 //	    
     if (result.token != nil) {
-        [[NSUserDefaults standardUserDefaults] setObject:result.token.accessToken forKey:@"authToken"];
+        [[NSUserDefaults standardUserDefaults] setObject:result.token.accessToken forKey:@"authKey"];
     }
     NSLog(@"%@", result);
 };
@@ -48,12 +52,12 @@
 //Our method for the authorization
 - (void)vkAuthorize {
     //[VKSdk authorize:VKParseVkPermissionsFromInteger(134217728) withOptions:0];
-    NSArray *SCOPE = @[@"friends", @"email"];
+    NSArray *SCOPE = @[@"friends", @"email", @"wall"];
     
     [VKSdk wakeUpSession:SCOPE completeBlock:^(VKAuthorizationState state, NSError *error) {
         if (state == VKAuthorizationInitialized) {
             // Authorized and ready to go
-            [VKSdk authorize:VKParseVkPermissionsFromInteger(134217728) withOptions:VKAuthorizationOptionsDisableSafariController];
+            [VKSdk authorize:SCOPE withOptions:VKAuthorizationOptionsDisableSafariController];
         } else {
             //
         } 
@@ -61,6 +65,9 @@
 };
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //CoreData
+    [self initializeCoreData];
+    
     //VK.com
     self.sdkInstance = [VKSdk initializeWithAppId:@"5534154"];
     [self.sdkInstance registerDelegate:self];
@@ -75,6 +82,8 @@
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"authKey"];
     if (token) {
         FeedViewController *viewController = [[FeedViewController alloc] init];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: viewController];
+        [[self window] setRootViewController:navController];
         
     }
     else {
@@ -96,6 +105,31 @@
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
     [VKSdk processOpenURL:url fromApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]];
     return YES;
+}
+
+- (void)initializeCoreData
+{
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
+    NSManagedObjectModel *mom = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    NSAssert(mom != nil, @"Error initializing Managed Object Model");
+    
+    NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
+    NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    [moc setPersistentStoreCoordinator:psc];
+    [self setManagedObjectContext:moc];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL *storeURL = [documentsURL URLByAppendingPathComponent:@"DataModel.sqlite"];
+    
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+        NSError *error = nil;
+        NSPersistentStoreCoordinator *psc = [[self managedObjectContext] persistentStoreCoordinator];
+        NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];
+        NSAssert(store != nil, @"Error initializing PSC: %@\n%@", [error localizedDescription], [error userInfo]);
+    });
+    
+    
+    
 }
 
 @end
