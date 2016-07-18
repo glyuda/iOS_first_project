@@ -1,5 +1,5 @@
 //
-//  Photo+CoreDataProperties.m
+//  Post+CoreDataProperties.m
 //  
 //
 //  Created by Student on 7/18/16.
@@ -9,18 +9,14 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Photo+CoreDataProperties.h"
+#import "Post+CoreDataProperties.h"
 
-@implementation Photo (CoreDataProperties)
+@implementation Post (CoreDataProperties)
 
-@dynamic created;
-@dynamic height;
 @dynamic id;
+@dynamic date;
 @dynamic text;
-@dynamic url;
-@dynamic width;
-@dynamic album;
-@dynamic albumCover;
+@dynamic post_type;
 @dynamic owner;
 
 @end
