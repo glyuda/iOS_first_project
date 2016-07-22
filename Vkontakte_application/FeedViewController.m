@@ -94,8 +94,8 @@
                                //parsing posts
                                for (NSDictionary *itemsDict in responseDict[@"response"][@"items"]) {
                                    Post *postObject = [NSEntityDescription insertNewObjectForEntityForName:@"Post" inManagedObjectContext:context];
-                                   postObject.id = itemsDict[@"id"];
-                                   postObject.date = itemsDict[@"date"];
+                                   postObject.id = itemsDict[@"post_id"];
+                                   postObject.date = nil; //itemsDict[@"date"];
                                    postObject.post_type = itemsDict[@"post_type"];
                                    postObject.text = itemsDict[@"text"];
                                    
@@ -104,13 +104,11 @@
                                        //get photo's id
                                        NSString *attachmentType = attachmentDictionary[@"type"];
                                        if ([attachmentType isEqualToString:@"photo"]) {
-                                           NSNumber *photoId = attachmentDictionary[@"id"];
+                                           Photo *photoObject = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:context];
+                                           NSNumber *photoUrl = attachmentDictionary[@"src"];
                                            
-                                           //create link between Post and Photo
-                                           if (photoId != nil) {
-                                               [postObject addPhotosObject:];
-                                               //[photoObject setOwner:owner];
-                                           }
+                                           [postObject addPhotosObject:photoObject];
+                                           [photoObject setFeedPhoto:postObject];
                                            
                                        }
                                    }
@@ -129,7 +127,10 @@
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    id post = self.items[indexPath.row];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostTableViewCell" forIndexPath:indexPath];
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {
