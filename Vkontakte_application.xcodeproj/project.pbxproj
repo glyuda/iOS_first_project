@@ -15,15 +15,16 @@
 		3F0E567C1D1D8DC2003A316C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E567B1D1D8DC2003A316C /* Assets.xcassets */; };
 		3F0E567F1D1D8DC2003A316C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E567D1D1D8DC2003A316C /* LaunchScreen.storyboard */; };
 		3F0E568B1D1D9034003A316C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E568A1D1D9034003A316C /* SignUpViewController.m */; };
+		3F2691701D42800F00F7FC23 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F26916F1D42800F00F7FC23 /* PostTableViewCell.m */; };
+		3F2691791D42823200F7FC23 /* Post+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2691721D42823200F7FC23 /* Post+CoreDataProperties.m */; };
+		3F26917A1D42823200F7FC23 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2691741D42823200F7FC23 /* Post.m */; };
+		3F26917B1D42823200F7FC23 /* Photo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2691761D42823200F7FC23 /* Photo+CoreDataProperties.m */; };
+		3F26917C1D42823200F7FC23 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2691781D42823200F7FC23 /* Photo.m */; };
 		3F2820361D26D7CD0038000F /* background_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F2820351D26D7CD0038000F /* background_image.jpg */; };
 		3F2820381D26E5080038000F /* bigstock-Beautiful-Woman-Face-98982257.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F2820371D26E5080038000F /* bigstock-Beautiful-Woman-Face-98982257.jpg */; };
 		3F28203A1D26E5950038000F /* face_PNG5646.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F2820391D26E5950038000F /* face_PNG5646.png */; };
 		3FB961A71D3943EE001C3DDF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FB961A51D3943EE001C3DDF /* Model.xcdatamodeld */; };
 		3FB961BD1D3952D4001C3DDF /* NSManagerObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB961BC1D3952D4001C3DDF /* NSManagerObjectContext.m */; };
-		3FC3498B1D3D56700040F64F /* Post+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3497C1D3D56700040F64F /* Post+CoreDataProperties.m */; };
-		3FC3498C1D3D56700040F64F /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3497E1D3D56700040F64F /* Post.m */; };
-		3FC3498D1D3D56700040F64F /* Photo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC349801D3D56700040F64F /* Photo+CoreDataProperties.m */; };
-		3FC3498E1D3D56700040F64F /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC349821D3D56700040F64F /* Photo.m */; };
 		3FC3498F1D3D56700040F64F /* PhotoAlbum+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC349841D3D56700040F64F /* PhotoAlbum+CoreDataProperties.m */; };
 		3FC349901D3D56700040F64F /* PhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC349861D3D56700040F64F /* PhotoAlbum.m */; };
 		3FC349911D3D56700040F64F /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC349881D3D56700040F64F /* User+CoreDataProperties.m */; };
@@ -48,20 +49,22 @@
 		3F0E56801D1D8DC2003A316C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F0E56891D1D9034003A316C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		3F0E568A1D1D9034003A316C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		3F26916E1D42800F00F7FC23 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
+		3F26916F1D42800F00F7FC23 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
+		3F2691711D42823200F7FC23 /* Post+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Post+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3F2691721D42823200F7FC23 /* Post+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Post+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3F2691731D42823200F7FC23 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		3F2691741D42823200F7FC23 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		3F2691751D42823200F7FC23 /* Photo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3F2691761D42823200F7FC23 /* Photo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3F2691771D42823200F7FC23 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		3F2691781D42823200F7FC23 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		3F2820351D26D7CD0038000F /* background_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_image.jpg; sourceTree = "<group>"; };
 		3F2820371D26E5080038000F /* bigstock-Beautiful-Woman-Face-98982257.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bigstock-Beautiful-Woman-Face-98982257.jpg"; sourceTree = "<group>"; };
 		3F2820391D26E5950038000F /* face_PNG5646.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face_PNG5646.png; sourceTree = "<group>"; };
 		3FB961A61D3943EE001C3DDF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3FB961BB1D3952D4001C3DDF /* NSManagerObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSManagerObjectContext.h; sourceTree = "<group>"; };
 		3FB961BC1D3952D4001C3DDF /* NSManagerObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSManagerObjectContext.m; sourceTree = "<group>"; };
-		3FC3497B1D3D56700040F64F /* Post+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Post+CoreDataProperties.h"; sourceTree = "<group>"; };
-		3FC3497C1D3D56700040F64F /* Post+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Post+CoreDataProperties.m"; sourceTree = "<group>"; };
-		3FC3497D1D3D56700040F64F /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
-		3FC3497E1D3D56700040F64F /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
-		3FC3497F1D3D56700040F64F /* Photo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+CoreDataProperties.h"; sourceTree = "<group>"; };
-		3FC349801D3D56700040F64F /* Photo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+CoreDataProperties.m"; sourceTree = "<group>"; };
-		3FC349811D3D56700040F64F /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
-		3FC349821D3D56700040F64F /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		3FC349831D3D56700040F64F /* PhotoAlbum+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PhotoAlbum+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3FC349841D3D56700040F64F /* PhotoAlbum+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PhotoAlbum+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3FC349851D3D56700040F64F /* PhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbum.h; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				3FB961A51D3943EE001C3DDF /* Model.xcdatamodeld */,
 				3FB961BB1D3952D4001C3DDF /* NSManagerObjectContext.h */,
 				3FB961BC1D3952D4001C3DDF /* NSManagerObjectContext.m */,
+				3F26916E1D42800F00F7FC23 /* PostTableViewCell.h */,
+				3F26916F1D42800F00F7FC23 /* PostTableViewCell.m */,
 			);
 			path = Vkontakte_application;
 			sourceTree = "<group>";
@@ -151,14 +156,6 @@
 		3FB961A81D39498B001C3DDF /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				3FC3497B1D3D56700040F64F /* Post+CoreDataProperties.h */,
-				3FC3497C1D3D56700040F64F /* Post+CoreDataProperties.m */,
-				3FC3497D1D3D56700040F64F /* Post.h */,
-				3FC3497E1D3D56700040F64F /* Post.m */,
-				3FC3497F1D3D56700040F64F /* Photo+CoreDataProperties.h */,
-				3FC349801D3D56700040F64F /* Photo+CoreDataProperties.m */,
-				3FC349811D3D56700040F64F /* Photo.h */,
-				3FC349821D3D56700040F64F /* Photo.m */,
 				3FC349831D3D56700040F64F /* PhotoAlbum+CoreDataProperties.h */,
 				3FC349841D3D56700040F64F /* PhotoAlbum+CoreDataProperties.m */,
 				3FC349851D3D56700040F64F /* PhotoAlbum.h */,
@@ -167,6 +164,14 @@
 				3FC349881D3D56700040F64F /* User+CoreDataProperties.m */,
 				3FC349891D3D56700040F64F /* User.h */,
 				3FC3498A1D3D56700040F64F /* User.m */,
+				3F2691711D42823200F7FC23 /* Post+CoreDataProperties.h */,
+				3F2691721D42823200F7FC23 /* Post+CoreDataProperties.m */,
+				3F2691731D42823200F7FC23 /* Post.h */,
+				3F2691741D42823200F7FC23 /* Post.m */,
+				3F2691751D42823200F7FC23 /* Photo+CoreDataProperties.h */,
+				3F2691761D42823200F7FC23 /* Photo+CoreDataProperties.m */,
+				3F2691771D42823200F7FC23 /* Photo.h */,
+				3F2691781D42823200F7FC23 /* Photo.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -314,19 +319,20 @@
 				3FC349921D3D56700040F64F /* User.m in Sources */,
 				3FC349911D3D56700040F64F /* User+CoreDataProperties.m in Sources */,
 				3FC3498F1D3D56700040F64F /* PhotoAlbum+CoreDataProperties.m in Sources */,
-				3FC3498E1D3D56700040F64F /* Photo.m in Sources */,
 				3F0E568B1D1D9034003A316C /* SignUpViewController.m in Sources */,
 				3F046E7C1D2AC37D00B8D256 /* DataManager.m in Sources */,
 				3F0E56771D1D8DC2003A316C /* ViewController.m in Sources */,
 				3FB961A71D3943EE001C3DDF /* Model.xcdatamodeld in Sources */,
+				3F2691701D42800F00F7FC23 /* PostTableViewCell.m in Sources */,
 				3FC349901D3D56700040F64F /* PhotoAlbum.m in Sources */,
+				3F26917C1D42823200F7FC23 /* Photo.m in Sources */,
 				3FB961BD1D3952D4001C3DDF /* NSManagerObjectContext.m in Sources */,
-				3FC3498C1D3D56700040F64F /* Post.m in Sources */,
-				3FC3498D1D3D56700040F64F /* Photo+CoreDataProperties.m in Sources */,
+				3F26917B1D42823200F7FC23 /* Photo+CoreDataProperties.m in Sources */,
+				3F26917A1D42823200F7FC23 /* Post.m in Sources */,
 				3F0E56741D1D8DC2003A316C /* AppDelegate.m in Sources */,
+				3F2691791D42823200F7FC23 /* Post+CoreDataProperties.m in Sources */,
 				3F05DA7E1D30274F005C212C /* FeedViewController.m in Sources */,
 				3F0E56711D1D8DC2003A316C /* main.m in Sources */,
-				3FC3498B1D3D56700040F64F /* Post+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

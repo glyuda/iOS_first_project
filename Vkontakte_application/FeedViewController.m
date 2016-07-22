@@ -12,9 +12,10 @@
 #import "User.h"
 #import "Photo.h"
 #import "Post.h"
+#import "PostTableViewCell.h"
 
 
-@interface FeedViewController ()
+@interface FeedViewController () <UITableViewDataSource>
 
 @end
 
@@ -22,11 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.dataSource = self;
-    
-    
-    
+    [tableView registerClass:[PostTableViewCell class] forCellReuseIdentifier:@"PostTableViewCell"];
     
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"authKey"];
     [DataManager GETRequestWithURL:@"https://api.vk.com/method/newsfeed.get"
@@ -94,7 +94,26 @@
                                //parsing posts
                                for (NSDictionary *itemsDict in responseDict[@"response"][@"items"]) {
                                    Post *postObject = [NSEntityDescription insertNewObjectForEntityForName:@"Post" inManagedObjectContext:context];
+                                   postObject.id = itemsDict[@"id"];
+                                   postObject.date = itemsDict[@"date"];
+                                   postObject.post_type = itemsDict[@"post_type"];
+                                   postObject.text = itemsDict[@"text"];
                                    
+                                   
+                                   for (NSDictionary *attachmentDictionary in itemsDict[@"attachments"]) {
+                                       //get photo's id
+                                       NSString *attachmentType = attachmentDictionary[@"type"];
+                                       if ([attachmentType isEqualToString:@"photo"]) {
+                                           NSNumber *photoId = attachmentDictionary[@"id"];
+                                           
+                                           //create link between Post and Photo
+                                           if (photoId != nil) {
+                                               [postObject addPhotosObject:];
+                                               //[photoObject setOwner:owner];
+                                           }
+                                           
+                                       }
+                                   }
                                    
                                }
 
@@ -103,6 +122,14 @@
                                [[NSManagedObjectContext defaultContext] save:nil];
                                
                            }];
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.items.count;
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostTableViewCell" forIndexPath:indexPath];
 }
 
 - (void)didReceiveMemoryWarning {
