@@ -15,7 +15,7 @@
 #import "PostTableViewCell.h"
 
 
-@interface FeedViewController () <UITableViewDataSource>
+@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
@@ -26,7 +26,10 @@
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.dataSource = self;
+    tableView.delegate = self;
+    
     [tableView registerClass:[PostTableViewCell class] forCellReuseIdentifier:@"PostTableViewCell"];
+    [[self view] addSubview:tableView];
     
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"authKey"];
     [DataManager GETRequestWithURL:@"https://api.vk.com/method/newsfeed.get"
@@ -105,20 +108,21 @@
                                        NSString *attachmentType = attachmentDictionary[@"type"];
                                        if ([attachmentType isEqualToString:@"photo"]) {
                                            Photo *photoObject = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:context];
-                                           NSNumber *photoUrl = attachmentDictionary[@"src"];
+                                           photoObject.url = attachmentDictionary[@"photo"][@"src"];
                                            
                                            [postObject addPhotosObject:photoObject];
                                            [photoObject setFeedPhoto:postObject];
-                                           
                                        }
                                    }
-                                   
                                }
-
                                
                                //save changes
                                [[NSManagedObjectContext defaultContext] save:nil];
                                
+                               NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Post"];
+                               NSArray *array = [[NSManagedObjectContext defaultContext] executeFetchRequest:fetchRequest error:nil];
+                               self.items = [array mutableCopy];
+                               [tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
                            }];
 }
 
@@ -126,10 +130,38 @@
     return self.items.count;
 }
 
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Post *post = self.items[indexPath.row];
+    Photo *photo = [post.photos anyObject];
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:photo.url]];
+    UIImage *image = [UIImage imageWithData:data];
+    NSString *text = post.text;
+    UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    NSDictionary *attributes = @{NSFontAttributeName: font};
+    CGRect rect = [text boundingRectWithSize:CGSizeMake(tableView.frame.size.width, CGFLOAT_MAX) options:0 attributes:attributes context:nil];
+    return rect.size.height + image.size.height;
+}
+
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    id post = self.items[indexPath.row];
+    Post *post = self.items[indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostTableViewCell" forIndexPath:indexPath];
+    PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostTableViewCell" forIndexPath:indexPath];
+    Photo *photo = [post.photos anyObject];
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:photo.url]];
+    [cell setPostImageView:[[UIImageView alloc] init]];
+    [cell.postImageView setContentMode:UIViewContentModeScaleAspectFit];
+    [cell setTextView:[[UITextView alloc] init]];
+    //add on ierarhy
+    [cell addSubview:cell.postImageView];
+    [cell addSubview:cell.textView];
+    
+    UIImage *imageToDraw =[UIImage imageWithData:data];
+    cell.postImageView.image = imageToDraw;
+    cell.postImageView.frame = CGRectMake(0, 0, cell.frame.size.width, imageToDraw.size.height);
+    cell.textView.frame = CGRectMake(0, CGRectGetMaxY(cell.postImageView.frame), cell.frame.size.width, cell.frame.size.height - CGRectGetMaxY(cell.postImageView.frame));
+    
+    cell.textView.text = post.text;
+    [cell setNeedsLayout];
     return cell;
 }
 
