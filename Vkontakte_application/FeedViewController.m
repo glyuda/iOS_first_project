@@ -28,7 +28,9 @@
     tableView.dataSource = self;
     tableView.delegate = self;
     
-    [tableView registerClass:[PostTableViewCell class] forCellReuseIdentifier:@"PostTableViewCell"];
+    //[tableView registerClass:[PostTableViewCell class] forCellReuseIdentifier:@"PostTableViewCell"];
+    UINib *nib = [UINib nibWithNibName:@"PostTableViewCell" bundle:[NSBundle mainBundle]];
+    [tableView registerNib:nib forCellReuseIdentifier:@"PostTableViewCell"];
     [[self view] addSubview:tableView];
     
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"authKey"];
@@ -74,6 +76,18 @@
                                            photoObject.created = nil; //attachmentDictionary[@"date"];
                                            photoObject.album = nil; //attachmentDictionary[@"album_id"];
                                            photoObject.albumCover = nil; //???
+                                           
+                                           dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+                                               NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoObject.url]];
+                                               NSFileManager *fileManager = [NSFileManager defaultManager];
+                                               NSString *string = [[NSUUID UUID] UUIDString];
+                                               NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+                                               NSString *documentDirectory = paths[0];
+                                               NSLog(@"%@", documentDirectory);
+                                               NSString *fullPath = [documentDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", string]];///????
+                                               [fileManager createFileAtPath:fullPath contents:data attributes:nil];
+                                               photoObject.filepath = string;
+                                           });
                                            
                                            //get photo's owner
                                            NSNumber *ownerId = photoSource[@"owner_id"];
@@ -131,37 +145,28 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Post *post = self.items[indexPath.row];
-    Photo *photo = [post.photos anyObject];
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:photo.url]];
-    UIImage *image = [UIImage imageWithData:data];
-    NSString *text = post.text;
-    UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-    NSDictionary *attributes = @{NSFontAttributeName: font};
-    CGRect rect = [text boundingRectWithSize:CGSizeMake(tableView.frame.size.width, CGFLOAT_MAX) options:0 attributes:attributes context:nil];
-    return rect.size.height + image.size.height;
+//    Post *post = self.items[indexPath.row];
+//    Photo *photo = [post.photos anyObject];
+//    
+//    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:photo.url]];
+//    UIImage *image = [UIImage imageWithData:data];
+//    NSString *text = post.text;
+//    UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+//    NSDictionary *attributes = @{NSFontAttributeName: font};
+//    
+//    CGRect rect = [text boundingRectWithSize:CGSizeMake(tableView.frame.size.width, CGFLOAT_MAX) options:0 attributes:attributes context:nil];
+//    return rect.size.height + image.size.height;
+    return UITableViewAutomaticDimension;
 }
+
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     Post *post = self.items[indexPath.row];
     
     PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostTableViewCell" forIndexPath:indexPath];
-    Photo *photo = [post.photos anyObject];
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:photo.url]];
-    [cell setPostImageView:[[UIImageView alloc] init]];
-    [cell.postImageView setContentMode:UIViewContentModeScaleAspectFit];
-    [cell setTextView:[[UITextView alloc] init]];
-    //add on ierarhy
-    [cell addSubview:cell.postImageView];
-    [cell addSubview:cell.textView];
     
-    UIImage *imageToDraw =[UIImage imageWithData:data];
-    cell.postImageView.image = imageToDraw;
-    cell.postImageView.frame = CGRectMake(0, 0, cell.frame.size.width, imageToDraw.size.height);
-    cell.textView.frame = CGRectMake(0, CGRectGetMaxY(cell.postImageView.frame), cell.frame.size.width, cell.frame.size.height - CGRectGetMaxY(cell.postImageView.frame));
+    cell.post = post;
     
-    cell.textView.text = post.text;
-    [cell setNeedsLayout];
     return cell;
 }
 

@@ -9,8 +9,16 @@
 #import "Post.h"
 #import "Photo.h"
 #import "User.h"
+@import UIKit;
 
-@implementation Post
+@implementation Post {
+
+}
+
+- (UIImage *) image {
+    Photo *photo = [self.photos anyObject];
+    return photo.image;
+}
 
 // Insert code here to add functionality to your managed object subclass
 

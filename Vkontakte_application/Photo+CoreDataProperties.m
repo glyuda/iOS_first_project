@@ -18,6 +18,7 @@
 @dynamic id;
 @dynamic text;
 @dynamic url;
+@dynamic filepath;
 @dynamic width;
 @dynamic album;
 @dynamic albumCover;

@@ -19,7 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *height;
 @property (nullable, nonatomic, retain) NSNumber *id;
 @property (nullable, nonatomic, retain) NSString *text;
-@property (nullable, nonatomic, retain) NSString *url;
+@property (nullable, nonatomic, retain) NSString *filepath; //local path for picture
+@property (nullable, nonatomic, retain) NSString *url; //path for picture on Web
 @property (nullable, nonatomic, retain) NSNumber *width;
 @property (nullable, nonatomic, retain) PhotoAlbum *album;
 @property (nullable, nonatomic, retain) PhotoAlbum *albumCover;

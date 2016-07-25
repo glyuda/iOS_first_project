@@ -7,9 +7,11 @@
 //
 
 @import UIKit;
+@class Post;
 
 @interface PostTableViewCell : UITableViewCell
-@property (nonatomic, retain) UIImageView *postImageView;
-@property (nonatomic, retain) UITextView *textView;
+@property (nonatomic, retain) Post *post;
+@property (nonatomic, retain) IBOutlet UIImageView *postImageView;
+@property (nonatomic, retain) IBOutlet UITextView *textView;
 
 @end

@@ -29,6 +29,7 @@
 		3FC349901D3D56700040F64F /* PhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC349861D3D56700040F64F /* PhotoAlbum.m */; };
 		3FC349911D3D56700040F64F /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC349881D3D56700040F64F /* User+CoreDataProperties.m */; };
 		3FC349921D3D56700040F64F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3498A1D3D56700040F64F /* User.m */; };
+		3FEF47EE1D468F3600BB663E /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEF47ED1D468F3600BB663E /* PostTableViewCell.xib */; };
 		9EF614E9F75CD6AB735DF61C /* libPods-Vkontakte_application.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 132E67D3215BABBF1CA5B3C7 /* libPods-Vkontakte_application.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		3FC349881D3D56700040F64F /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3FC349891D3D56700040F64F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		3FC3498A1D3D56700040F64F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		3FEF47ED1D468F3600BB663E /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		53E7E9796D07B85C7EBB44D8 /* Pods-Vkontakte_application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte_application.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vkontakte_application/Pods-Vkontakte_application.debug.xcconfig"; sourceTree = "<group>"; };
 		FD4DAE26AEACCBBF9F078084 /* Pods-Vkontakte_application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte_application.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vkontakte_application/Pods-Vkontakte_application.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				3FB961BC1D3952D4001C3DDF /* NSManagerObjectContext.m */,
 				3F26916E1D42800F00F7FC23 /* PostTableViewCell.h */,
 				3F26916F1D42800F00F7FC23 /* PostTableViewCell.m */,
+				3FEF47ED1D468F3600BB663E /* PostTableViewCell.xib */,
 			);
 			path = Vkontakte_application;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				3F0E567F1D1D8DC2003A316C /* LaunchScreen.storyboard in Resources */,
 				3F2820361D26D7CD0038000F /* background_image.jpg in Resources */,
 				3F0E567C1D1D8DC2003A316C /* Assets.xcassets in Resources */,
+				3FEF47EE1D468F3600BB663E /* PostTableViewCell.xib in Resources */,
 				3F28203A1D26E5950038000F /* face_PNG5646.png in Resources */,
 				3F2820381D26E5080038000F /* bigstock-Beautiful-Woman-Face-98982257.jpg in Resources */,
 			);

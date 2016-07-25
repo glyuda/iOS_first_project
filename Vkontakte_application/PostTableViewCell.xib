@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="414" id="pKX-Mh-7Gm" customClass="PostTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="414"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pKX-Mh-7Gm" id="vcZ-3V-xzN">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="413"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8OY-me-gLX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
+                    </imageView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ubm-EG-lBJ">
+                        <rect key="frame" x="0.0" y="191" width="320" height="222"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8OY-me-gLX" firstAttribute="leading" secondItem="vcZ-3V-xzN" secondAttribute="leading" id="72o-wS-l6o"/>
+                    <constraint firstAttribute="trailing" secondItem="8OY-me-gLX" secondAttribute="trailing" id="7On-tQ-7b7"/>
+                    <constraint firstItem="8OY-me-gLX" firstAttribute="leading" secondItem="vcZ-3V-xzN" secondAttribute="leading" id="8Bc-cu-JH9"/>
+                    <constraint firstItem="Ubm-EG-lBJ" firstAttribute="width" secondItem="vcZ-3V-xzN" secondAttribute="width" id="Mc7-k4-8nC"/>
+                    <constraint firstItem="Ubm-EG-lBJ" firstAttribute="leading" secondItem="vcZ-3V-xzN" secondAttribute="leading" id="Tsi-9p-DgR"/>
+                    <constraint firstAttribute="trailing" secondItem="Ubm-EG-lBJ" secondAttribute="trailing" id="cj9-Ec-fuZ"/>
+                    <constraint firstItem="8OY-me-gLX" firstAttribute="top" secondItem="vcZ-3V-xzN" secondAttribute="top" id="e8l-U3-Iu9"/>
+                    <constraint firstItem="Ubm-EG-lBJ" firstAttribute="top" secondItem="8OY-me-gLX" secondAttribute="bottom" id="hAz-TX-abX"/>
+                    <constraint firstItem="8OY-me-gLX" firstAttribute="width" secondItem="vcZ-3V-xzN" secondAttribute="width" id="hYJ-Ex-WoH"/>
+                    <constraint firstAttribute="bottom" secondItem="Ubm-EG-lBJ" secondAttribute="bottom" id="m1V-HY-z2g"/>
+                    <constraint firstItem="Ubm-EG-lBJ" firstAttribute="height" relation="greaterThanOrEqual" secondItem="vcZ-3V-xzN" secondAttribute="height" id="mCG-D9-Uoi"/>
+                    <constraint firstAttribute="trailing" secondItem="8OY-me-gLX" secondAttribute="trailing" id="tR8-DC-7bm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="postImageView" destination="8OY-me-gLX" id="GwX-7N-Oti"/>
+                <outlet property="textView" destination="Ubm-EG-lBJ" id="j2i-to-EDC"/>
+            </connections>
+            <point key="canvasLocation" x="350" y="270"/>
+        </tableViewCell>
+    </objects>
+</document>
