@@ -13,6 +13,7 @@
 #import "Photo.h"
 #import "Post.h"
 #import "PostTableViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 
 @interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -27,6 +28,8 @@
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.dataSource = self;
     tableView.delegate = self;
+    
+    [tableView setEstimatedRowHeight:120];
     
     //[tableView registerClass:[PostTableViewCell class] forCellReuseIdentifier:@"PostTableViewCell"];
     UINib *nib = [UINib nibWithNibName:@"PostTableViewCell" bundle:[NSBundle mainBundle]];
@@ -58,16 +61,27 @@
                                //parsing photos
                                for (NSDictionary *itemsDict in responseDict[@"response"][@"items"]) {
                                    NSArray *attachments = itemsDict[@"attachments"];
-                                   
+                                   Post *postObject = [NSEntityDescription insertNewObjectForEntityForName:@"Post" inManagedObjectContext:context];
+                                   postObject.id = itemsDict[@"post_id"];
+                                   postObject.date = nil; //itemsDict[@"date"];
+                                   postObject.post_type = itemsDict[@"post_type"];
+                                   postObject.text = itemsDict[@"text"];
                                    for (NSDictionary *attachmentDictionary in attachments) {
                                        
                                        NSString *attachmentType = attachmentDictionary[@"type"];
                                        if ([attachmentType isEqualToString:@"photo"]) {
-                                           //create Photo as we did for User early
-                                           Photo *photoObject = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:context];
-                                           
                                            NSDictionary *photoSource = attachmentDictionary[@"photo"];
+                                           //get photo's id
+                                           NSNumber *photoId = photoSource[@"pid"];
+                                           //search this photo by id
+                                           NSFetchRequest *fetchPhotoRequest = [NSFetchRequest  fetchRequestWithEntityName:@"Photo"];
+                                           fetchPhotoRequest.predicate = [NSPredicate predicateWithFormat:@"id == %@", photoId];
+                                           [fetchPhotoRequest setFetchLimit:1];
                                            
+                                           NSArray *photoArray = [context executeFetchRequest:fetchPhotoRequest error:nil];
+                                           Photo *photoObject = [photoArray firstObject];
+                                           
+                                           photoObject = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:context];
                                            photoObject.id = photoSource[@"pid"];
                                            photoObject.url = photoSource[@"src"];
                                            photoObject.width = photoSource[@"width"];
@@ -77,17 +91,8 @@
                                            photoObject.album = nil; //attachmentDictionary[@"album_id"];
                                            photoObject.albumCover = nil; //???
                                            
-                                           dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-                                               NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoObject.url]];
-                                               NSFileManager *fileManager = [NSFileManager defaultManager];
-                                               NSString *string = [[NSUUID UUID] UUIDString];
-                                               NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-                                               NSString *documentDirectory = paths[0];
-                                               NSLog(@"%@", documentDirectory);
-                                               NSString *fullPath = [documentDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", string]];///????
-                                               [fileManager createFileAtPath:fullPath contents:data attributes:nil];
-                                               photoObject.filepath = string;
-                                           });
+                                           [postObject addPhotosObject:photoObject];
+                                           [photoObject setFeedPhoto:postObject];
                                            
                                            //get photo's owner
                                            NSNumber *ownerId = photoSource[@"owner_id"];
@@ -104,31 +109,11 @@
                                                [owner addPhotosObject:photoObject];
                                                [photoObject setOwner:owner];
                                            }
-                                       }
-                                   }
+
+                                       } //end if
+                                   } //end for attachmentDictionary
                                }
                                
-                               //parsing posts
-                               for (NSDictionary *itemsDict in responseDict[@"response"][@"items"]) {
-                                   Post *postObject = [NSEntityDescription insertNewObjectForEntityForName:@"Post" inManagedObjectContext:context];
-                                   postObject.id = itemsDict[@"post_id"];
-                                   postObject.date = nil; //itemsDict[@"date"];
-                                   postObject.post_type = itemsDict[@"post_type"];
-                                   postObject.text = itemsDict[@"text"];
-                                   
-                                   
-                                   for (NSDictionary *attachmentDictionary in itemsDict[@"attachments"]) {
-                                       //get photo's id
-                                       NSString *attachmentType = attachmentDictionary[@"type"];
-                                       if ([attachmentType isEqualToString:@"photo"]) {
-                                           Photo *photoObject = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:context];
-                                           photoObject.url = attachmentDictionary[@"photo"][@"src"];
-                                           
-                                           [postObject addPhotosObject:photoObject];
-                                           [photoObject setFeedPhoto:postObject];
-                                       }
-                                   }
-                               }
                                
                                //save changes
                                [[NSManagedObjectContext defaultContext] save:nil];
@@ -145,28 +130,33 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    Post *post = self.items[indexPath.row];
-//    Photo *photo = [post.photos anyObject];
-//    
-//    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:photo.url]];
-//    UIImage *image = [UIImage imageWithData:data];
-//    NSString *text = post.text;
-//    UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-//    NSDictionary *attributes = @{NSFontAttributeName: font};
-//    
-//    CGRect rect = [text boundingRectWithSize:CGSizeMake(tableView.frame.size.width, CGFLOAT_MAX) options:0 attributes:attributes context:nil];
-//    return rect.size.height + image.size.height;
+    //    Post *post = self.items[indexPath.row];
+    //    Photo *photo = [post.photos anyObject];
+    //
+    //    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:photo.url]];
+    //    UIImage *image = [UIImage imageWithData:data];
+    //    NSString *text = post.text;
+    //    UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    //    NSDictionary *attributes = @{NSFontAttributeName: font};
+    //
+    //    CGRect rect = [text boundingRectWithSize:CGSizeMake(tableView.frame.size.width, CGFLOAT_MAX) options:0 attributes:attributes context:nil];
+    //    return rect.size.height + image.size.height;
     return UITableViewAutomaticDimension;
 }
 
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     Post *post = self.items[indexPath.row];
+    Photo *photo = [[post photos] anyObject];
     
     PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostTableViewCell" forIndexPath:indexPath];
+    NSURL *photoUrl = [NSURL URLWithString:photo.url];
+    [[cell postImageView] setImageWithURL:photoUrl];
     
-    cell.post = post;
-    
+    cell.textView.attributedText = [[NSAttributedString alloc] initWithData:[post.text dataUsingEncoding:NSUTF8StringEncoding]
+                                                                    options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                              NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
+                                                         documentAttributes:nil error:nil];
     return cell;
 }
 
@@ -176,13 +166,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

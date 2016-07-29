@@ -2,7 +2,8 @@
 # platform :ios, '9.0'
 
 target 'Vkontakte_application' do
-pod "VK-ios-sdk" 
+pod "VK-ios-sdk"
+pod 'AFNetworking', '~> 3.0'
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
